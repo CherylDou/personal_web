@@ -1,0 +1,233 @@
+.projects {
+  padding-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.projects :is(h1, h2, h3, p) {
+  margin: 0;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  align-items: end;
+  gap: .9rem clamp(1.75rem, 4.3vw, 3.5rem);
+  padding-block: var(--intro-space) clamp(1.5rem, 4vw, 2.75rem);
+  border-bottom: 1px solid var(--rule);
+}
+
+.intro h1 {
+  font-size: clamp(2.65rem, 5.4vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -.07em;
+}
+
+.intro em {
+  color: var(--iris);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -.06em;
+}
+
+.intro p {
+  max-width: 37ch;
+  color: var(--muted-ink);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 1.5rem);
+  margin-top: clamp(1.25rem, 4vw, 2.75rem);
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: clamp(1rem, 2.4vw, 1.75rem);
+  border: 1px solid var(--rule);
+  border-radius: 1rem;
+}
+
+.projectIntro {
+  flex: 1;
+}
+
+.projectIntro h2 {
+  margin-top: .5rem;
+  font-size: clamp(1.75rem, 3.12vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -.053em;
+}
+
+.projectIntro .description {
+  max-width: 49ch;
+  margin-top: .65rem;
+  color: var(--muted-ink);
+  font-size: .97rem;
+}
+
+.preview {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  min-height: 15.75rem;
+  padding: clamp(.75rem, 1.75vw, 1.25rem);
+}
+
+.cheer {
+  --preview-accent: light-dark(#7e3753, #f7c4d6);
+  --preview-on-accent: light-dark(#fff, #38202b);
+  --panel-background: light-dark(#f8edf1, #3e2837);
+}
+
+.previewHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+}
+
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .15rem .5rem;
+  min-height: var(--control-height);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--iris);
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.pipeline li {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.pipeline li:not(:last-child)::after {
+  content: "→" / "";
+}
+
+.report,
+.note {
+  flex: 1;
+  min-height: 7.5rem;
+  padding: .75rem;
+  border: 1px solid var(--rule);
+  border-radius: .65rem;
+  background: var(--paper);
+}
+
+.reportHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .25rem .6rem;
+  padding-bottom: .45rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.reportHeading span {
+  color: var(--iris);
+  font: 700 .68rem/1.4 var(--font-label);
+}
+
+.report ul {
+  display: grid;
+  gap: .25rem;
+  margin: .5rem 0 0;
+  padding-inline-start: 1.05rem;
+  color: var(--muted-ink);
+  font-size: .82rem;
+}
+
+.report li::marker {
+  color: var(--iris);
+}
+
+.moments {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.momentOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .375rem;
+}
+
+.moment {
+  position: relative;
+  display: inline-flex;
+}
+
+.moment span {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-height);
+  padding: .35rem .6rem;
+  border: 1px solid var(--control-border);
+  border-radius: .45rem;
+  color: var(--preview-accent);
+  font-size: .8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.moment:hover span {
+  border-color: var(--preview-accent);
+}
+
+.moment input:checked + span {
+  border-color: var(--preview-accent);
+  background: var(--preview-accent);
+  color: var(--preview-on-accent);
+}
+
+.moment input:focus-visible + span {
+  outline: 2px solid var(--preview-accent);
+  outline-offset: 2px;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .4rem;
+}
+
+.noteText {
+  font: italic 400 clamp(1.1rem, 1.7vw, 1.375rem)/1.3 var(--font-display);
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 53rem) {
+  .intro,
+  .projectGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .intro h1 {
+    font-size: clamp(2.65rem, 9vw, 4.5rem);
+  }
+}

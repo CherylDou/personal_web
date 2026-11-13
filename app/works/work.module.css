@@ -1,0 +1,211 @@
+.work {
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.work :is(h1, h2, p, figure) {
+  margin: 0;
+}
+
+.intro {
+  padding-block: var(--intro-space) clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  align-items: end;
+  gap: .9rem clamp(1.75rem, 4.3vw, 3.5rem);
+}
+
+.introGrid h1 {
+  font-size: clamp(2.65rem, 6.2vw, 5.25rem);
+  line-height: 1;
+  letter-spacing: -.07em;
+}
+
+.introGrid h1 em {
+  color: var(--iris);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -.06em;
+}
+
+.introGrid p {
+  max-width: 39ch;
+  color: var(--muted-ink);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+.index {
+  border-block: 1px solid var(--rule);
+}
+
+.index ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 clamp(.875rem, 3.5vw, 2.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workItem {
+  display: grid;
+  grid-template-columns: minmax(0, .84fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4.5rem);
+  scroll-margin-top: 1rem;
+  padding-block: clamp(2rem, 5.4vw, 4.25rem);
+}
+
+.workItem + .workItem {
+  border-top: 1px solid var(--rule);
+}
+
+.summary h2 {
+  margin-top: .55rem;
+  font-size: clamp(1.85rem, 3.65vw, 2.95rem);
+  line-height: 1.07;
+  letter-spacing: -.055em;
+}
+
+.summary .description {
+  max-width: 45ch;
+  margin-top: .85rem;
+  color: var(--muted-ink);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stack li {
+  padding: .18rem .5rem;
+  border: 1px solid var(--rule);
+  border-radius: .35rem;
+  color: var(--muted-ink);
+  font-size: .75rem;
+  font-weight: 650;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .25rem 1rem;
+  margin-top: 1.25rem;
+}
+
+.artifact {
+  padding: clamp(.875rem, 2.35vw, 1.5rem);
+}
+
+.artifactHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  margin-bottom: .75rem;
+}
+
+.screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: .65rem;
+}
+
+.artifact figcaption {
+  margin-top: .6rem;
+  color: var(--muted-ink);
+  font-size: .8125rem;
+  line-height: 1.45;
+}
+
+.flow {
+  display: grid;
+  justify-items: center;
+  gap: .55rem;
+  margin: 0;
+  padding: clamp(.6rem, 1.5vw, 1rem);
+  border: 1px solid var(--rule);
+  border-radius: .65rem;
+  background: var(--paper);
+  text-align: center;
+  list-style: none;
+}
+
+.flow > li {
+  position: relative;
+  width: min(100%, 19rem);
+  padding: .25rem .55rem;
+  border: 1px solid var(--rule);
+  border-radius: .375rem;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.flow > li:not(:last-child)::after {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 50%;
+  width: 1px;
+  height: .55rem;
+  background: var(--iris);
+  content: "";
+}
+
+.flow > .flowWriters {
+  width: min(100%, 27rem);
+  background: var(--lavender);
+}
+
+.flowLabel {
+  display: block;
+  margin-bottom: .3rem;
+  color: var(--iris);
+}
+
+.draftStyles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.draftStyles li {
+  flex: 1 0 auto;
+  padding: .2rem .15rem;
+  border-radius: .25rem;
+  background: var(--paper);
+  font-size: clamp(.68rem, 1.1vw, .75rem);
+}
+
+.flow > .flowReview {
+  border-color: var(--iris);
+  background: var(--iris);
+  color: var(--on-iris);
+}
+
+@media (max-width: 48rem) {
+  .introGrid,
+  .workItem {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .introGrid h1 {
+    font-size: clamp(2.65rem, 9vw, 4.5rem);
+  }
+
+  .artifact {
+    width: min(100%, 38rem);
+  }
+}
